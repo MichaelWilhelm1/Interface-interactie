@@ -3,16 +3,28 @@
 /*************/
 
 /* naar een idee van Jen Simmons */
-*, *::after, *::before {
-  box-sizing:border-box;  
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'mariobros';
+  src: url('../fonts/superplumberbrothers-y00v-webfont.woff2') format('woff2'),
+    url('../fonts/superplumberbrothers-y00v-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
 body {
-  margin:0;
+  margin: 0;
+  background-color: #6796F5;
 }
 
 button:not([disabled]) {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 
@@ -24,7 +36,7 @@ button:not([disabled]) {
 /*********************/
 
 :root {
-  --color-headings:crimson
+  --color-headings: crimson
 }
 
 
@@ -36,10 +48,80 @@ button:not([disabled]) {
 /********************/
 
 h1 {
-  color:var(--color-headings);
+  font-family: 'mariobros', sans-serif;
+}
+
+h2 {
+  font-family: 'mariobros', sans-serif;
+}
+
+p {
+  font-family: 'mariobros',
+    sans-serif;
+}
+
+.ground {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20vh;
+  background-image: url("../images/ground.png");
+}
+
+.goombas {
+  display: flex;
+  position: absolute;
+  width: 150px;
+  /* animation: move 5s ease-in-out infinite; */
 }
 
 
+
+/* @keyframes move {
+
+  0%,
+  100% {
+    left: 0;
+  }
+
+  25% {
+    left: calc(100% - 50px);
+  }
+
+  50%,
+  75% {
+    left: calc(50% - 25px);
+  }
+} */
+
+.cloud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/clouds.png");
+  background-size: cover;
+  animation: animateCloud 60s linear infinite;
+}
+
+@keyframes animateCloud {
+  0% {
+    background-position: 860px;
+  }
+
+  100% {
+    background-position: 0px;
+  }
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
 /* ... */
-
-
