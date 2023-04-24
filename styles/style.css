@@ -47,17 +47,15 @@ button:not([disabled]) {
 /* ALGEMENE STYLING */
 /********************/
 
-h1 {
-  font-family: 'mariobros', sans-serif;
+main section {
+  margin-left: 30px;
 }
 
-h2 {
-  font-family: 'mariobros', sans-serif;
-}
+section h1,
+section h2 {
+  position: relative;
+  z-index: 2;
 
-p {
-  font-family: 'mariobros',
-    sans-serif;
 }
 
 .ground {
@@ -73,6 +71,8 @@ p {
   display: flex;
   position: absolute;
   width: 150px;
+  bottom: 0;
+  z-index: 1;
   /* animation: move 5s ease-in-out infinite; */
 }
 
@@ -104,6 +104,7 @@ p {
   background-image: url("../images/clouds.png");
   background-size: cover;
   animation: animateCloud 60s linear infinite;
+  z-index: 1;
 }
 
 @keyframes animateCloud {
@@ -125,3 +126,17 @@ p {
 }
 
 /* ... */
+/* typografie */
+h1 {
+  font-family: 'mariobros', sans-serif;
+  font-size: 5em;
+}
+
+h2 {
+  font-family: 'mariobros', sans-serif;
+}
+
+p {
+  font-family: 'mariobros',
+    sans-serif;
+}
