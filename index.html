@@ -6,13 +6,13 @@
 	<meta name="author" content="jouw naam">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>VIDii 2022/23 - Tijdlijn</title>
+	<title>Goomba - Timeline / Super Mario Bros</title>
 
 	<link href="styles/style.css" rel="stylesheet">
 	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 </head>
 
-<body>
+<body class="background">
 	<header>
 
 	</header>
@@ -22,26 +22,26 @@
 			<h1>Goombas Timeline</h1>
 			<h2>Super Mario Bros</h2>
 		</section>
-		<div class="cloud"></div>
-		<!-- de tijdlijn zelf is een ordered list -->
+		<!-- <div class="cloud"></div> -->
+		<section>
+			<img class="goombas show" src="images/goomba1.gif" alt="eerste goomba" onclick="toggleGoomba(this)">
 
-		<!-- elk list-item is een punt in tijd -->
-		<!-- 11 list-items om te starten -->
-		<!-- bepaal zelf hoeveel je er nodig hebt -->
+			<img class="goombas hide" src="images/goombabros3.gif" alt="goomba uit bros3" onclick="toggleGoomba(this)">
 
-		<!-- in elk listitem staat nu een link -->
-		<!-- de link kun je vullen met jouw content -->
-		<!-- of in zijn geheel vervangen door jouw content -->
+			<img class="goombas hide" src="images/galoomba.gif" alt="galoomba super mario world"
+				onclick="toggleGoomba(this)">
 
-		<div>
-			<img class="goombas show" src="images/goomba1.gif" alt="eerste goomba">
-			<img class="goombas show" src="images/goombabros3.gif" alt="goomba uit bros3">
-			<img class="goombas show" src="images/galoomba.gif" alt="galoomba super mario world">
-			<img class="goombas hide" src="images/goombo.gif" alt="goombo super mario land">
-			<img class="goombas hide" src="images/goombo2.gif" alt="goombo super mario land 2">
-		</div>
+			<img class="goombas hide" src="images/goombo.gif" alt="goombo super mario land"
+				onclick="toggleGoomba(this)">
 
-		<div class="ground"></div>
+			<img class="goombas hide" src="images/goombo2.gif" alt="goombo super mario land 2"
+				onclick="toggleGoomba(this)">
+		</section>
+
+
+
+
+		<!-- <section class="ground"></section> -->
 	</main>
 
 	<script src="scripts/script.js"></script>

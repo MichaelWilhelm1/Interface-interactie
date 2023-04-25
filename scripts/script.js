@@ -1,22 +1,56 @@
 // JavaScript Document
 console.log("Howdy!");
 
-const goomba = document.querySelector(".goombas");
-const pageWidth = document.body.clientWidth;
+var count = 1;
+var background = document.querySelector('.background' + count);
 
-function moveGoomba() {
-    // Genereer een random lengte voor de goomba te lopen
-    const distance = Math.floor(Math.random() * pageWidth);
+const goombas = document.querySelectorAll(".goombas");
+let pageWidth = document.body.clientWidth;
 
-    // Generen van een random tijd dat het blok beweegt
-    const speed = Math.floor(Math.random() * 5) + 1; // tussen 1px en 5px
+window.addEventListener("resize", function () {
+    pageWidth = document.body.clientWidth;
+});
 
-    // Transform style met gegenereerde waarden
-    goomba.style.transform = `translateX(${distance}px)`;
-    goomba.style.transition = `transform ${speed}s linear`;
+// voor elke img met class goomba doe je hetzelfde
+goombas.forEach(goomba => {
 
-    // Na random delay wordt MoveGoomba weer afgespeelt
-    setTimeout(moveGoomba, speed * 1000);
+    function moveGoomba() {
+
+        // Genereer een random lengte voor de goomba te lopen
+        const distance = Math.floor(Math.random() * (pageWidth - goomba.clientWidth));
+
+        // genereer een random snelheid die de goomba loopt
+        const speed = Math.floor(Math.random() * 5) + 1; // between 1px and 5px
+
+        // Set the transform style with the generated values
+        goomba.style.transform = `translateX(${distance}px)`;
+        goomba.style.transition = `transform ${speed}s linear`;
+
+        // MoveGoomba wordt na een random delay uitgevoerd
+        setTimeout(moveGoomba, speed * 1000);
+    }
+
+    moveGoomba();
+});
+
+function toggleGoomba(img) {
+    // hide geklikte goomba
+    img.classList.remove('show');
+    img.classList.add('hide');
+    count++;
+    console.log(count);
+
+
+    // de volgende sibling image element met class 'goomba'
+    var nextImg = img.nextElementSibling;
+    while (nextImg && !nextImg.classList.contains('goombas')) {
+        nextImg = nextImg.nextElementSibling;
+    }
+
+    // laat de volgende image zien
+    if (nextImg) {
+        nextImg.classList.remove('hide');
+        nextImg.classList.add('show');
+        document.body.className = "background" + count;
+    }
 }
-
-moveGoomba();
