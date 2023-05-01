@@ -1,5 +1,4 @@
 // JavaScript Document
-console.log("Howdy!");
 
 var count = 1;
 var background = document.querySelector('.background' + count);
@@ -54,3 +53,24 @@ function toggleGoomba(img) {
         document.body.className = "background" + count;
     }
 }
+
+// Startscreen - dialog
+const dialogBox = document.getElementById("dialog-box");
+const closeBtn = document.getElementById("close-btn");
+const howToPlayBtn = document.getElementById("how-to-play-btn");
+
+closeBtn.addEventListener("click", () => {
+    dialogBox.close();
+});
+
+let howToPlayAdded = false;
+
+howToPlayBtn.addEventListener("click", () => {
+    if (!howToPlayAdded) {
+        const howToPlayText = "Click on the goombas to kill them and spawn a new generation!";
+        const howToPlayPara = document.createElement("p");
+        howToPlayPara.textContent = howToPlayText;
+        dialogBox.appendChild(howToPlayPara);
+        howToPlayAdded = true;
+    }
+});

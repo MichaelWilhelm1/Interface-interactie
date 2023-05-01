@@ -2,7 +2,7 @@
 /* CSS RESET */
 /*************/
 
-/* naar een idee van Jen Simmons */
+
 *,
 *::after,
 *::before {
@@ -20,12 +20,38 @@
 
 }
 
+/* typografie */
+h1 {
+  font-family: 'mariobros', sans-serif;
+  font-size: 5vw;
+}
+
+h2 {
+  font-family: 'mariobros', sans-serif;
+}
+
+p {
+  font-family: 'mariobros',
+    sans-serif;
+  font-size: 2vw;
+}
+
+button {
+  font-family: 'mariobros',
+    sans-serif;
+  font-size: 2vw;
+}
+
+/* body */
+
 body {
   margin: 0;
-  background-color: #6796F5;
+  background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
   height: 100vh;
   width: auto;
+  cursor: url('../images/mariocursor.png'),
+    auto;
 }
 
 button:not([disabled]) {
@@ -41,7 +67,15 @@ button:not([disabled]) {
 /*********************/
 
 :root {
-  --color-headings: crimson
+  --color-h1: #fff;
+  --shadow-h1: -1px -1px 0 #000,
+    1px -1px 0 #000,
+    7px 7px 0 #000,
+    1px 1px 0 #000;
+  --color-background: #6796F5;
+  --button-color: #fff;
+  --button-text: #f44336;
+  --button-border: 2px solid #000;
 }
 
 
@@ -52,10 +86,6 @@ button:not([disabled]) {
 /* ALGEMENE STYLING */
 /********************/
 
-main section:nth-of-type(1) {
-  margin-left: 30px;
-}
-
 section h1,
 section h2 {
   position: relative;
@@ -63,14 +93,14 @@ section h2 {
 
 }
 
-.ground {
+/* .ground {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 10vh;
   background-image: url("../images/ground.png");
-}
+} */
 
 .goombas {
   display: flex;
@@ -78,8 +108,11 @@ section h2 {
   width: 150px;
   bottom: 13%;
   z-index: 1;
+  cursor: url('../images/cursorhover.png'),
+    auto;
   /* animation: move 5s ease-in-out infinite; */
 }
+
 
 /* @keyframes move {
 
@@ -129,7 +162,7 @@ section h2 {
   }
 }
 
-.cloud {
+/* .cloud {
   position: absolute;
   top: 0;
   left: 0;
@@ -149,7 +182,7 @@ section h2 {
   100% {
     background-position: 0px;
   }
-}
+} */
 
 .show {
   display: block;
@@ -159,18 +192,38 @@ section h2 {
   display: none;
 }
 
-/* ... */
-/* typografie */
-h1 {
-  font-family: 'mariobros', sans-serif;
-  font-size: 5em;
+/* startscreen - dialog */
+#dialog-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  background-image: url(../images/goombabackground.png);
+  background-size: cover;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 99;
+  backdrop-filter: blur(5px);
 }
 
-h2 {
-  font-family: 'mariobros', sans-serif;
+#dialog-box h1 {
+  font-size: 5vw;
+  margin: 0;
+  color: var(--color-h1);
+  text-shadow:
+    var(--shadow-h1);
 }
 
-p {
-  font-family: 'mariobros',
-    sans-serif;
+#dialog-box button {
+  display: block;
+  margin: 10px auto;
+  border: var(--button-border);
+  padding: 5px 10px;
+  background-color: var(--button-color);
+  color: var(--button-text);
+  border-radius: 3px;
+  cursor: pointer;
 }
