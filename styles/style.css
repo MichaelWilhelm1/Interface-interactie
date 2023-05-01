@@ -64,7 +64,6 @@ body {
     1px -1px 0 #000,
     7px 7px 0 #000,
     1px 1px 0 #000;
-
   --color-p: #fff;
   --shadow-p: -0.5px -0.5px 0 #000,
     0.5px -0.5px 0 #000,
@@ -73,7 +72,8 @@ body {
   --color-background: #6796F5;
   --button-color: #fff;
   --button-text: #f44336;
-  --button-border: 2px solid #000;
+  --button-border: 0.1em solid #000;
+  --button-border-hover: 0.15em solid #CC0000;
 }
 
 /********************/
@@ -96,6 +96,21 @@ button {
   color: var(--button-text);
   border-radius: 3px;
   cursor: pointer;
+}
+
+button:hover {
+  border: var(--button-border-hover);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+button:focus {
+  border: var(--button-border-hover);
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: translateY(4px);
 }
 
 /* .ground {
