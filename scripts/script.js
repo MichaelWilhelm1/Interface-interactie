@@ -46,7 +46,7 @@ function toggleGoomba(img) {
         nextImg = nextImg.nextElementSibling;
     }
 
-    // laat de volgende image zien
+    // laat de volgende image zien en de volgende background image
     if (nextImg) {
         nextImg.classList.remove('hide');
         nextImg.classList.add('show');
@@ -74,3 +74,28 @@ howToPlayBtn.addEventListener("click", () => {
         howToPlayAdded = true;
     }
 });
+
+// Audio button
+
+// const audioBtn = document.querySelector("header button");
+
+// audioBtn.addEventListener("click", () => {
+//     console.log("audio");
+// });
+
+// function playAudio() {
+//     var audio = document.getElementById("audio");
+//     audio.play();
+// }
+
+const audio = new Audio('audio/themesong.mp3');
+audio.loop = true; // Make the audio loop continuously
+audio.play();
+
+function toggleAudio() {
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+}

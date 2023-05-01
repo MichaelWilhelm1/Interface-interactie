@@ -54,14 +54,6 @@ body {
     auto;
 }
 
-button:not([disabled]) {
-  cursor: pointer;
-}
-
-
-
-
-
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
@@ -72,15 +64,17 @@ button:not([disabled]) {
     1px -1px 0 #000,
     7px 7px 0 #000,
     1px 1px 0 #000;
+
+  --color-p: #fff;
+  --shadow-p: -0.5px -0.5px 0 #000,
+    0.5px -0.5px 0 #000,
+    3px 3px 0 #000,
+    0.5px 0.5px 0 #000;
   --color-background: #6796F5;
   --button-color: #fff;
   --button-text: #f44336;
   --button-border: 2px solid #000;
 }
-
-
-
-
 
 /********************/
 /* ALGEMENE STYLING */
@@ -91,6 +85,17 @@ section h2 {
   position: relative;
   z-index: 2;
 
+}
+
+button {
+  display: block;
+  margin: 10px auto;
+  border: var(--button-border);
+  padding: 5px 10px;
+  background-color: var(--button-color);
+  color: var(--button-text);
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 /* .ground {
@@ -112,7 +117,6 @@ section h2 {
     auto;
   /* animation: move 5s ease-in-out infinite; */
 }
-
 
 /* @keyframes move {
 
@@ -217,13 +221,17 @@ section h2 {
     var(--shadow-h1);
 }
 
-#dialog-box button {
-  display: block;
-  margin: 10px auto;
-  border: var(--button-border);
-  padding: 5px 10px;
-  background-color: var(--button-color);
-  color: var(--button-text);
-  border-radius: 3px;
-  cursor: pointer;
+#dialog-box p {
+  margin: 0;
+  color: var(--color-p);
+  text-shadow:
+    var(--shadow-p);
+}
+
+/* Audio button */
+
+header button {
+  position: absolute;
+  top: 1em;
+  left: 1em;
 }
