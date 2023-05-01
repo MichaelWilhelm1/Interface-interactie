@@ -28,12 +28,25 @@ h1 {
 
 h2 {
   font-family: 'mariobros', sans-serif;
+  font-size: 3vw;
+}
+
+h3 {
+  font-family: 'mariobros',
+    sans-serif;
+  font-size: 2.5vw;
 }
 
 p {
   font-family: 'mariobros',
     sans-serif;
   font-size: 2vw;
+}
+
+main section:nth-of-type(1) p {
+  font-family: 'mariobros',
+    sans-serif;
+  font-size: 1.5vw;
 }
 
 button {
@@ -69,23 +82,21 @@ body {
     0.5px -0.5px 0 #000,
     3px 3px 0 #000,
     0.5px 0.5px 0 #000;
+
   --color-background: #6796F5;
+
   --button-color: #fff;
   --button-text: #f44336;
   --button-border: 0.1em solid #000;
   --button-border-hover: 0.15em solid #CC0000;
+
+  --background: #D33300;
+  --section-size: 25vw;
 }
 
 /********************/
 /* ALGEMENE STYLING */
 /********************/
-
-section h1,
-section h2 {
-  position: relative;
-  z-index: 2;
-
-}
 
 button {
   display: block;
@@ -249,4 +260,39 @@ header button {
   position: absolute;
   top: 1em;
   left: 1em;
+  margin: 0;
+}
+
+/* Sections verschillende generaties */
+article section {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  top: 2em;
+  right: 3em;
+  background-color: var(--background);
+  padding: 0.5em;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: calc(var(--section-size)*1.1);
+  width: var(--section-size);
+}
+
+article section p {
+  width: 90%;
+  color: var(--color-p);
+  text-shadow: var(--shadow-p);
+}
+
+article section h2 {
+  width: 90%;
+  color: var(--color-h1);
+  text-shadow: var(--shadow-h1);
+}
+
+article section h3 {
+  width: 90%;
+  color: var(--color-h1);
+  text-shadow: var(--shadow-h1);
 }
