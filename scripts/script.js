@@ -32,13 +32,30 @@ goombas.forEach(goomba => {
     moveGoomba();
 });
 
+
+// functie: toggleGoomba
+goombas.forEach(function (goomba) {
+    goomba.addEventListener('click', function (event) {
+        toggleGoomba(event.target);
+    });
+});
+
 function toggleGoomba(img) {
+    const information = document.getElementById('information' + count);
     // hide geklikte goomba
     img.classList.remove('show');
     img.classList.add('hide');
+
+    information.classList.remove('show');
+    information.classList.add('hide');
+
+    // count body element voor de achtergrond
     count++;
     console.log(count);
 
+    const nextInfo = document.getElementById('information' + count);
+    nextInfo.classList.remove('hide');
+    nextInfo.classList.add('show');
 
     // de volgende sibling image element met class 'goomba'
     var nextImg = img.nextElementSibling;
@@ -87,15 +104,17 @@ howToPlayBtn.addEventListener("click", () => {
 //     var audio = document.getElementById("audio");
 //     audio.play();
 // }
-
+const audioBtn = document.querySelector('header button');
 const audio = new Audio('audio/themesong.mp3');
-audio.loop = true; // Make the audio loop continuously
-audio.play();
+audioBtn.addEventListener('click', toggleAudio);
 
 function toggleAudio() {
+
     if (audio.paused) {
         audio.play();
+        audioBtn.innerHTML = 'PAUSE AUDIO'
     } else {
         audio.pause();
+        audioBtn.innerHTML = 'PLAY AUDIO'
     }
-}
+};

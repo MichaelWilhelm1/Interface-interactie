@@ -14,7 +14,7 @@
 
 <body class="background">
 	<header>
-		<button onclick="toggleAudio()">AUDIO</button>
+		<button>PLAY AUDIO</button>
 	</header>
 
 	<main>
@@ -30,28 +30,54 @@
 			<h2>Super Mario Bros</h2>
 		</section> -->
 		<!-- <div class="cloud"></div> -->
-		<article>
+		<article id="information1" class="show">
 			<section>
+				<img src="images/articlegoomba1.png" alt="running goomba">
 				<h2>SUPER MARIO BROS</h2>
 				<h3>1985</h3>
-				<p>Section text goes here...even testen door veel tekst te plaatsen</p>
+				<p>Goombas are one of the major species of the Mario franchise.
+					Since their first game appearance in Super Mario Bros they have become the most iconic and common
+					enemies in the entire Mario franchise followed by Koopa Troopas.
+					They resemble small brown mushrooms with two feet and no visible arms or legs.
+				</p>
+			</section>
+		</article>
+		<article id="information2" class="hide">
+			<section>
+				<img src="images/paragoomba.webp" alt="para goomba">
+				<h2>SUPER MARIO BROS 3</h2>
+				<h3>1988</h3>
+				<p>Goombas can be found in every world except Dark Land.
+					These Goombas are unchanged in behavior from their appearances in Super Mario Bros.
+					This game introduces the concept of Goomba variants such as Para-Goombas, winged Goombas
+					that either fly and drop Micro-Goombas if it is tan or simply hop if it is red.
+				</p>
+			</section>
+		</article>
+		<article id="information3" class="hide">
+			<section>
+				<img src="images/paragoomba.webp" alt="para goomba">
+				<h2>SUPER MARIO BROS 500</h2>
+				<h3>1988</h3>
+				<p>Goombas can be found in every world except Dark Land.
+					These Goombas are unchanged in behavior from their appearances in Super Mario Bros.
+					This game introduces the concept of Goomba variants such as Para-Goombas, winged Goombas
+					that either fly and drop Micro-Goombas if it is tan or simply hop if it is red.
+				</p>
 			</section>
 		</article>
 
 
 		<section>
-			<img class="goombas show" src="images/goomba1.gif" alt="eerste goomba" onclick="toggleGoomba(this)">
+			<img class="goombas show" src="images/goomba1.gif" alt="eerste goomba">
 
-			<img class="goombas hide" src="images/goombabros3.gif" alt="goomba uit bros3" onclick="toggleGoomba(this)">
+			<img class="goombas hide" src="images/goombabros3.gif" alt="goomba uit bros3">
 
-			<img class="goombas hide" src="images/galoomba.gif" alt="galoomba super mario world"
-				onclick="toggleGoomba(this)">
+			<img class="goombas hide" src="images/galoomba.gif" alt="galoomba super mario world">
 
-			<img class="goombas hide" src="images/goombo.gif" alt="goombo super mario land"
-				onclick="toggleGoomba(this)">
+			<img class="goombas hide" src="images/goombo.gif" alt="goombo super mario land">
 
-			<img class="goombas hide" src="images/goombo2.gif" alt="goombo super mario land 2"
-				onclick="toggleGoomba(this)">
+			<img class="goombas hide" src="images/goombo2.gif" alt="goombo super mario land 2">
 		</section>
 
 
