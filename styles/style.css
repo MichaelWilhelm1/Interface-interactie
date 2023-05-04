@@ -176,7 +176,21 @@ button:active {
 }
 
 .background3 {
+  background-image: url("../images/supermariolandbg.png");
+  background-size: cover;
+  z-index: 1;
+  animation: animateBackground 120s linear infinite;
+}
+
+.background4 {
   background-image: url("../images/supermarioworldbg.png");
+  background-size: cover;
+  z-index: 1;
+  animation: animateBackground 120s linear infinite;
+}
+
+.background5 {
+  background-image: url("../images/newsupermariobrosbg.png");
   background-size: cover;
   z-index: 1;
   animation: animateBackground 120s linear infinite;
@@ -184,7 +198,7 @@ button:active {
 
 @keyframes animateBackground {
   0% {
-    background-position: 16128px;
+    background-position: 17277px;
   }
 
   100% {
@@ -302,4 +316,13 @@ article section img {
   bottom: -2em;
   right: -2em;
   position: absolute;
+}
+
+#information4 section {
+  height: calc(var(--section-size)*1.3);
+
+}
+
+#information5 section {
+  height: calc(var(--section-size)*1.5);
 }

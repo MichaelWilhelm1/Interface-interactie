@@ -84,7 +84,7 @@ let howToPlayAdded = false;
 
 howToPlayBtn.addEventListener("click", () => {
     if (!howToPlayAdded) {
-        const howToPlayText = "Click on the goombas to kill them and spawn a new generation!";
+        const howToPlayText = "Click on the goombas to defeat them and spawn a new generation!";
         const howToPlayPara = document.createElement("p");
         howToPlayPara.textContent = howToPlayText;
         dialogBox.appendChild(howToPlayPara);
