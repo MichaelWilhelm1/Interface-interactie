@@ -63,7 +63,7 @@ body {
   -webkit-font-smoothing: antialiased;
   height: 100vh;
   width: auto;
-  cursor: url('../images/mariocursor.png'),
+  cursor: url('../images/cursor.png'),
     auto;
 }
 
@@ -111,7 +111,6 @@ button {
 
 button:hover {
   border: var(--button-border-hover);
-  cursor: pointer;
   transform: scale(1.1);
 }
 
@@ -139,9 +138,12 @@ button:active {
   width: 150px;
   bottom: 13%;
   z-index: 1;
-  cursor: url('../images/cursorhover.png'),
-    auto;
+  cursor: pointer;
   /* animation: move 5s ease-in-out infinite; */
+}
+
+main section img:nth-of-type(5) {
+  bottom: 7%;
 }
 
 /* @keyframes move {
@@ -198,11 +200,11 @@ button:active {
 
 @keyframes animateBackground {
   0% {
-    background-position: 17277px;
+    background-position: left;
   }
 
   100% {
-    background-position: 0px;
+    background-position: right;
   }
 }
 
@@ -324,5 +326,5 @@ article section img {
 }
 
 #information5 section {
-  height: calc(var(--section-size)*1.5);
+  height: calc(var(--section-size)*1.4);
 }

@@ -118,3 +118,10 @@ function toggleAudio() {
         audioBtn.innerHTML = 'PLAY AUDIO'
     }
 };
+
+// refresh button
+const refreshBtn = document.getElementById('refresh-btn');
+
+refreshBtn.addEventListener('click', function () {
+    location.reload();
+});
