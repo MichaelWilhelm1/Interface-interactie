@@ -10,7 +10,7 @@ window.addEventListener("resize", function () {
     pageWidth = document.body.clientWidth;
 });
 
-// voor elke img met class goomba doe je hetzelfde
+// voor elke img met class goomba doe je hetzelfde (uit de code van Sanne CodePen, het stukje forEach)
 goombas.forEach(goomba => {
 
     function moveGoomba() {
@@ -19,9 +19,9 @@ goombas.forEach(goomba => {
         const distance = Math.floor(Math.random() * (pageWidth - goomba.clientWidth));
 
         // genereer een random snelheid die de goomba loopt
-        const speed = Math.floor(Math.random() * 5) + 1; // between 1px and 5px
+        const speed = Math.floor(Math.random() * 5) + 1; // tussen 1px and 5px
 
-        // Set the transform style with the generated values
+        // Stel transform in met de gegenereerde distance en speed
         goomba.style.transform = `translateX(${distance}px)`;
         goomba.style.transition = `transform ${speed}s linear`;
 
@@ -49,7 +49,7 @@ function toggleGoomba(img) {
     information.classList.remove('show');
     information.classList.add('hide');
 
-    // count body element voor de achtergrond
+    // count body element voor de achtergrond (count body element met hulp van Alex)
     count++;
     console.log(count);
 
@@ -57,7 +57,7 @@ function toggleGoomba(img) {
     nextInfo.classList.remove('hide');
     nextInfo.classList.add('show');
 
-    // de volgende sibling image element met class 'goomba'
+    // de volgende sibling image element met class 'goomba' (stukje gegenereerd door AI)
     var nextImg = img.nextElementSibling;
     while (nextImg && !nextImg.classList.contains('goombas')) {
         nextImg = nextImg.nextElementSibling;
@@ -92,7 +92,7 @@ howToPlayBtn.addEventListener("click", () => {
     }
 });
 
-// Audio button
+// Audio button 
 
 // const audioBtn = document.querySelector("header button");
 
@@ -104,6 +104,9 @@ howToPlayBtn.addEventListener("click", () => {
 //     var audio = document.getElementById("audio");
 //     audio.play();
 // }
+
+// Audio Button (Bron: https://dev.to/shantanu_jana/how-to-play-sound-on-button-click-in-javascript-3m48)
+
 const audioBtn = document.querySelector('header button');
 const audio = new Audio('audio/themesong.mp3');
 audioBtn.addEventListener('click', toggleAudio);
@@ -119,9 +122,17 @@ function toggleAudio() {
     }
 };
 
-// refresh button
+// refresh button (bron: https://www.freecodecamp.org/news/refresh-the-page-in-javascript-js-reload-window-tutorial/#:~:text=You%20can%20use%20the%20location,method%20responsible%20for%20page%20reloading.)
 const refreshBtn = document.getElementById('refresh-btn');
 
 refreshBtn.addEventListener('click', function () {
     location.reload();
+});
+
+// klikken op img (bron: https://stackoverflow.com/questions/59054548/js-get-the-clicked-element-with-event-target)
+document.addEventListener('keydown', function (event) {
+    if (event.code === 'Enter' || event.code === 'Space') {
+        event.preventDefault();
+        event.target.click();
+    }
 });

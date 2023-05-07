@@ -1,8 +1,3 @@
-/*************/
-/* CSS RESET */
-/*************/
-
-
 *,
 *::after,
 *::before {
@@ -58,11 +53,9 @@ button {
 /* body */
 
 body {
-  margin: 0;
-  background-color: var(--color-background);
-  -webkit-font-smoothing: antialiased;
   height: 100vh;
   width: auto;
+  background-color: var(--color-background);
   cursor: url('../images/cursor.png'),
     auto;
 }
@@ -73,15 +66,15 @@ body {
 
 :root {
   --color-h1: #fff;
-  --shadow-h1: -1px -1px 0 #000,
-    1px -1px 0 #000,
-    7px 7px 0 #000,
-    1px 1px 0 #000;
+  --shadow-h1: -0.02em -0.02em 0 #000,
+    0.02em -0.02em 0 #000,
+    0.1875em 0.1875em 0 #000,
+    0.03125em 0.03125em 0 #000;
   --color-p: #fff;
-  --shadow-p: -0.5px -0.5px 0 #000,
-    0.5px -0.5px 0 #000,
-    3px 3px 0 #000,
-    0.5px 0.5px 0 #000;
+  --shadow-p: -0.03125em -0.03125em 0 #000,
+    0.03125em -0.03125em 0 #000,
+    0.1875em 0.1875em 0 #000,
+    0.03125em 0.03125em 0 #000;
 
   --color-background: #6796F5;
 
@@ -92,21 +85,40 @@ body {
 
   --background: #D33300;
   --section-size: 25vw;
+
+  --glow: 0 0 2.5em 0.75em #CC0000;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+
+    --button-color: #942a07;
+    --button-text: #fff;
+    --button-border: 0.1em solid #000;
+    --button-border-hover: 0.15em solid #fff;
+
+    --background: #942a07;
+    --section-size: 25vw;
+
+    --glow: 0 0 2.5em 0.75em #CC0000;
+  }
 }
 
 /********************/
-/* ALGEMENE STYLING */
+/* STYLING BUTTON */
 /********************/
 
 button {
   display: block;
   margin: 10px auto;
-  border: var(--button-border);
   padding: 5px 10px;
   background-color: var(--button-color);
   color: var(--button-text);
+  border: var(--button-border);
   border-radius: 3px;
-  cursor: pointer;
+  cursor: url('../images/cursorhover.png'),
+    auto;
 }
 
 button:hover {
@@ -123,6 +135,15 @@ button:active {
   transform: translateY(4px);
 }
 
+/* Audio button */
+
+header button {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  margin: 0;
+}
+
 /* .ground {
   position: fixed;
   bottom: 0;
@@ -132,18 +153,35 @@ button:active {
   background-image: url("../images/ground.png");
 } */
 
+/********************/
+/* STYLING GOOMBAS */
+/********************/
+
 .goombas {
   display: flex;
   position: absolute;
   width: 150px;
   bottom: 13%;
   z-index: 1;
-  cursor: pointer;
+  cursor: url('../images/cursorhover.png'),
+    auto;
   /* animation: move 5s ease-in-out infinite; */
+}
+
+.goombas:focus {
+  box-shadow: var(--glow);
 }
 
 main section img:nth-of-type(5) {
   bottom: 7%;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
 
 /* @keyframes move {
@@ -162,6 +200,10 @@ main section img:nth-of-type(5) {
     left: calc(50% - 25px);
   }
 } */
+
+/********************/
+/* STYLING MOVING BACKGROUNDS */
+/********************/
 
 .background {
   background-image: url("../images/mariobros1background.png");
@@ -230,15 +272,11 @@ main section img:nth-of-type(5) {
   }
 } */
 
-.show {
-  display: block;
-}
 
-.hide {
-  display: none;
-}
+/********************/
+/* STYLING STARTSCREEN / DIALOG */
+/********************/
 
-/* startscreen - dialog */
 #dialog-box {
   position: fixed;
   top: 50%;
@@ -248,16 +286,15 @@ main section img:nth-of-type(5) {
   height: 50%;
   background-image: url(../images/goombabackground.png);
   background-size: cover;
-  padding: 20px;
-  border-radius: 5px;
   text-align: center;
+  padding: 10px;
+  border-radius: 5px;
   z-index: 99;
-  backdrop-filter: blur(5px);
 }
 
 #dialog-box h1 {
-  font-size: 5vw;
   margin: 0;
+  font-size: 5vw;
   color: var(--color-h1);
   text-shadow:
     var(--shadow-h1);
@@ -270,18 +307,14 @@ main section img:nth-of-type(5) {
     var(--shadow-p);
 }
 
-/* Audio button */
+/********************/
+/* STYLING SECTIONS FOR EACH GENERATION */
+/********************/
 
-header button {
-  position: absolute;
-  top: 1em;
-  left: 1em;
-  margin: 0;
-}
-
-/* Sections verschillende generaties */
 article section {
   position: absolute;
+  height: calc(var(--section-size)*1.2);
+  width: var(--section-size);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -291,8 +324,6 @@ article section {
   padding: 0.5em;
   border: 1px solid black;
   border-radius: 5px;
-  height: calc(var(--section-size)*1.2);
-  width: var(--section-size);
 }
 
 article section p {
@@ -314,15 +345,14 @@ article section h3 {
 }
 
 article section img {
+  position: absolute;
   width: 7vw;
   bottom: -2em;
   right: -2em;
-  position: absolute;
 }
 
 #information4 section {
   height: calc(var(--section-size)*1.3);
-
 }
 
 #information5 section {
