@@ -11,6 +11,7 @@ window.addEventListener("resize", function () {
 });
 
 // voor elke img met class goomba doe je hetzelfde (uit de code van Sanne CodePen, het stukje forEach)
+// bron: https://stackoverflow.com/questions/21944523/random-movement-in-html5-and-javascript
 goombas.forEach(goomba => {
 
     function moveGoomba() {
