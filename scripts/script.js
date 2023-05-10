@@ -43,33 +43,46 @@ goombas.forEach(function (goomba) {
 
 function toggleGoomba(img) {
     const information = document.getElementById('information' + count);
-    // hide geklikte goomba
-    img.classList.remove('show');
-    img.classList.add('hide');
 
-    information.classList.remove('show');
-    information.classList.add('hide');
+
+
 
     // count body element voor de achtergrond (count body element met hulp van Alex)
     count++;
     console.log(count);
 
     const nextInfo = document.getElementById('information' + count);
-    nextInfo.classList.remove('hide');
-    nextInfo.classList.add('show');
 
-    // de volgende sibling image element met class 'goomba' (stukje gegenereerd door AI)
-    var nextImg = img.nextElementSibling;
-    while (nextImg && !nextImg.classList.contains('goombas')) {
-        nextImg = nextImg.nextElementSibling;
+    if (nextInfo) {
+
+        // hide geklikte goomba
+        img.classList.remove('show');
+        img.classList.add('hide');
+
+        information.classList.remove('show');
+        information.classList.add('hide');
+
+
+        nextInfo.classList.remove('hide');
+        nextInfo.classList.add('show');
+
+        // de volgende sibling image element met class 'goomba' (stukje gegenereerd door AI)
+        var nextImg = img.nextElementSibling;
+        while (nextImg && !nextImg.classList.contains('goombas')) {
+            nextImg = nextImg.nextElementSibling;
+        }
+
+        // laat de volgende image zien en de volgende background image
+        if (nextImg) {
+            nextImg.classList.remove('hide');
+            nextImg.classList.add('show');
+            document.body.className = "background" + count;
+        }
+    } else {
+        alert("he, doe es niet!")
     }
 
-    // laat de volgende image zien en de volgende background image
-    if (nextImg) {
-        nextImg.classList.remove('hide');
-        nextImg.classList.add('show');
-        document.body.className = "background" + count;
-    }
+
 }
 
 // Startscreen - dialog

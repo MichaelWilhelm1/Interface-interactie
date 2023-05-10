@@ -169,7 +169,11 @@ header button {
 }
 
 .goombas:focus {
-  box-shadow: var(--glow);
+  /* box-shadow: var(--glow); */
+  filter:
+    drop-shadow(0 0 .5em red) drop-shadow(0 0 1em red) drop-shadow(0 0 2em red);
+
+  outline: none;
 }
 
 main section img:nth-of-type(5) {
